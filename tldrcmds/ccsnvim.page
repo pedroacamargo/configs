@@ -1,0 +1,43 @@
+# ccsnvim
+
+> Shows the cheatsheet of my nvim configs
+
+- Files finder:
+`<leader> + p + f`
+
+- Files Explorer:
+`<leader> + e`
+
+- Grep:
+`<leader> + p + s`
+
+- Undo Tree:
+`<leader> + u`
+
+- Create directory in the current path:
+`<leader> + d + d`
+
+- Create a new file (Inside the files explorer)
+`a`
+
+> ---------- HARPOON ---------- 
+
+- Add file to harpoon:
+`<leader> + a`
+
+- Open Harpoon:
+`<C-e>`
+
+> ---------- Nvim Console Commands ----------
+
+- Exit
+`:Ex`
+
+- Update
+`:so`
+
+- Synchronize plugins
+`:DockerSync`
+
+- Install Language Highlight
+`:TSInstall`

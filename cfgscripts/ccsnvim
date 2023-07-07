@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Author: Pedro Augusto Ennes de Martino Camargo
+# Date Created: 05/06/2023
+# Last Modified: 05/06/2023
+
+# Description
+# prints NVIMshortcuts.txt in the terminal
+
+# Usage
+# ccsnvim
+
+tldr ccsnvim
+
+exit 0
