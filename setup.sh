@@ -10,34 +10,21 @@ custom_page_dir=$HOME/.local/share/tealdeer/pages
 tldrcmds_dir=./tldrcmds/
 cfgscripts_dir=./cfgscripts/
 
-# Install zshrc
-#sudo pacman -Sy zsh
-# End
-
-# install oh-my-zsh
-#sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
-#chsh -s $(which zsh)
-
-#exec zsh
-# source $HOME/.zshrc
-# End
-
 # Install Powerlevel10k theme
-sudo git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
 # End
 
-sudo cp .zshrc $HOME
-#sudo mv $HOME/.zshrc_backup .zshrc
-# sudo mv $HOME/.zshrc .zshrc_old
+# Copy the .zshrc file to home
+sudo cp ./zsh/.zshrc $HOME
 sudo source $HOME/.zshrc
+# End
 
-# paste .zshrc
-# y y n y 1 y 1 1 1 2 2 1 1 2 2 1 y 1
-
-git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/plugins
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/plugins
-
-
+# Install zsh plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/zsh-syntax-highlighting
+mv ~/zsh-autosuggestions/ ~/.oh-my-zsh/plugins/
+mv ~/zsh-syntax-highlighting/ ~/.oh-my-zsh/plugins/
+# End
 
 
 
@@ -51,10 +38,14 @@ yes y | sudo pacman -Sy tealdeer
 
 # Create the custom tldr commands folder
 if [ ! -d "$custom_page_dir" ]; then
+  echo ""
   mkdir -p "$custom_page_dir"
   echo "Directory created: $custom_page_dir"
+  echo ""
 else
+  echo ""
   echo "Directory already exists: $custom_page_dir"
+  echo ""
 fi
 # End
 
@@ -71,6 +62,8 @@ echo "All files copied successfully!"
 
 
 # Create my scripts folder
+scriptsDirectory=$HOME/cfgscripts/
+
 if [ ! -d "$scriptsDirectory" ]; then
   mkdir -p "$scriptsDirectory"
   echo "Directory created: $scriptsDirectory"
@@ -87,12 +80,12 @@ export_path='export PATH="$PATH:$HOME/cfgscripts/"'
 echo "Increasing the PATH system variable range..."
 if [ -f "$HOME/.zshrc" ]; then
   sudo echo "$export_path" >> "$HOME/.zshrc"
-  echo "Path refactored successfully!"
+  echo "ZSH path refactored successfully!"
 fi
 
 if [ -f "$HOME/.bashrc" ]; then
   sudo echo "$export_path" >> "$HOME/.bashrc"
-  echo "Path refactored successfully!"
+  echo "Bash path refactored successfully!"
 fi
 echo ""
 # End
@@ -100,9 +93,8 @@ echo ""
 
 
 # Create the custom scripts in the directory
-scriptsDirectory=$HOME/cfgscripts
-
 echo "Creating the scripts in $scriptsDirectory ..."
 cp -v $cfgscripts_dir/* $scriptsDirectory
 echo "Scripts created successfully!"
 # End
+#
