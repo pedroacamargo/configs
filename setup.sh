@@ -10,6 +10,32 @@ custom_page_dir=$HOME/.local/share/tealdeer/pages
 tldrcmds_dir=./tldrcmds/
 cfgscripts_dir=./cfgscripts/
 
+# Install zshrc
+yes y | sudo pacman -Sy zsh
+# End
+
+# install oh-my-zsh
+sudo sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+yes y
+chsh -s $(which zsh)
+source $HOME/.zshrc
+# End
+
+# Install Powerlevel10k theme
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+# End
+
+rm $HOME/.zshrc
+cp ./zsh/.zshrc_backup $HOME
+mv $HOME/.zshrc_backup .zshrc
+source $HOME/.zshrc
+
+# paste .zshrc
+# y y n y 1 y 1 1 1 2 2 1 1 2 2 1 y 1
+ 
+
+
+
 
 
 # Install tldr
