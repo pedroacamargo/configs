@@ -2,6 +2,6 @@
 
 # This script will ask for the root to fix the hour of the system, updating it compared to the ubuntu server
 
-sudo ntpupdate ntp.ubuntu.com
+sudo ntpdate ntp.ubuntu.com
 
 exit 0
