@@ -11,28 +11,31 @@ tldrcmds_dir=./tldrcmds/
 cfgscripts_dir=./cfgscripts/
 
 # Install zshrc
-yes y | sudo pacman -Sy zsh
+#sudo pacman -Sy zsh
 # End
 
 # install oh-my-zsh
-sudo sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-yes y
-chsh -s $(which zsh)
-source $HOME/.zshrc
+#sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
+#chsh -s $(which zsh)
+
+#exec zsh
+# source $HOME/.zshrc
 # End
 
 # Install Powerlevel10k theme
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+sudo git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 # End
 
-rm $HOME/.zshrc
-cp ./zsh/.zshrc_backup $HOME
-mv $HOME/.zshrc_backup .zshrc
-source $HOME/.zshrc
+sudo cp .zshrc $HOME
+#sudo mv $HOME/.zshrc_backup .zshrc
+# sudo mv $HOME/.zshrc .zshrc_old
+sudo source $HOME/.zshrc
 
 # paste .zshrc
 # y y n y 1 y 1 1 1 2 2 1 1 2 2 1 y 1
- 
+
+git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/plugins
 
 
 
@@ -83,13 +86,14 @@ export_path='export PATH="$PATH:$HOME/cfgscripts/"'
 
 echo "Increasing the PATH system variable range..."
 if [ -f "$HOME/.zshrc" ]; then
-  echo "$export_path" >> "$HOME/.zshrc"
+  sudo echo "$export_path" >> "$HOME/.zshrc"
+  echo "Path refactored successfully!"
 fi
 
 if [ -f "$HOME/.bashrc" ]; then
-  echo "$export_path" >> "$HOME/.bashrc"
+  sudo echo "$export_path" >> "$HOME/.bashrc"
+  echo "Path refactored successfully!"
 fi
-echo "Path refactored successfully!"
 echo ""
 # End
 
