@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Author: Pedro Augusto Ennes de Martino Camargo
+# Date Created: 07/06/2023
+# Last Modified: 07/06/2023
+
+# Description
+# Prints my bash cheatsheet in the terminal
+
+# Usage
+# ccsnvim
+
+tldr ccsbash
+
+exit 0

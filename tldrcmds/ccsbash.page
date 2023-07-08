@@ -1,0 +1,30 @@
+# ccsbash
+
+> Shows the cheatsheet for bash scripting
+
+- Will give read write and exec for actual user, same group buto others users will just be able to read:
+`chmod 774 <file>`
+
+- Transforms any file or folder in a .tar file, the same as .zip:
+`tar -cvf`
+
+- Reload the file and letting the changes be updated without the terminal restart:
+`source <file>`
+
+
+================= VARIABLES ===================
+
+- PATH
+`Contains the list of folders that the shell will search for executable files to run as command names`
+
+- HOME
+`Used to store the absolute path to the current user's home directory`
+
+- USER
+`Contains the username of the current user`
+
+- HOSTNAME & HOSTTYPE
+`Tell you about the computer you are using`
+
+- PS1
+`Contains the prompt string shown in the terminal before each command, you can customize its colors.`
