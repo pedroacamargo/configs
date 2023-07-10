@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Author: Pedro Augusto Ennes de Martino Camargo
+# Date Created: 11/07/2023
+# Last Modified: 11/07/2023
+
+# Description
+# prints FfufCheatsheet.txt in the terminal
+
+# Usage
+# ccsffuf
+
+tldr ccsffuf
+
+exit 0
