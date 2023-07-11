@@ -11,8 +11,10 @@
 - Reload the file and letting the changes be updated without the terminal restart:
 `source <file>`
 
+- The tilde allows you to access the $ HOME without having to type $ HOME
+`cd ~/`
 
-================= VARIABLES ===================
+- ================= VARIABLES ===================
 
 - PATH
 `Contains the list of folders that the shell will search for executable files to run as command names`
@@ -28,3 +30,6 @@
 
 - PS1
 `Contains the prompt string shown in the terminal before each command, you can customize its colors.`
+
+- OLDPWD
+`Contains the previous folder the currently user was.`
