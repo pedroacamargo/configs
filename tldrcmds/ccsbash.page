@@ -1,4 +1,4 @@
-# ccsbash
+#ccsbash
 
 > Shows the cheatsheet for bash scripting
 
@@ -13,6 +13,27 @@
 
 - The tilde allows you to access the $ HOME without having to type $ HOME
 `cd ~/`
+
+- ================= PARAMETER EXPANSION TRICKS =================
+
+- Convert the first character of the parameter to uppercase
+`${parameter^}`
+
+- Convert all characters of the parameter to uppercase
+`${parameter^^}`
+
+- Convert the first character of the parameter to lowercase
+`${parameter.}`
+
+- Convert all characters of the parameter to lowercase
+`${parameter..}`
+
+- Display how many characters the variable's value contains
+`${#parameter}`
+
+- The shell will expand the value of the parameter starting at character number defined by "offset" and expand up to a length of "length"
+`${parameter:offset:length}`
+
 
 - ================= VARIABLES ===================
 
@@ -33,3 +54,17 @@
 
 - OLDPWD
 `Contains the previous folder the currently user was.`
+
+- ================= Command substitution & Arithmetic Expansion ===================
+
+- Command substitution is used to directly reference the result of a command.
+`$(command)`
+
+- Arithmetic Expansion is used to perform mathematical calculations in your scripts.
+`$((expression))`
+
+- Using the bc command:
+`echo "expression" | bc`
+
+- Using the scale varible to control the number decimal places shown:
+`echo "scale=value; expression" | bc`
