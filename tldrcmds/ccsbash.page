@@ -71,3 +71,32 @@
 
 - Using the scale varible to control the number decimal places shown:
 `echo "scale=value; expression" | bc`
+
+- ================= Special Parameters ===================
+
+- You can access parameters for a bash function through $1 $2 or ${10} ${13}... any amount of parameters you'd like to have
+`./Command $1 $2 $3 $4 ... $N`
+
+- You can access the currently command name through $0, this is useful to log the user the number of the command in some cases
+`$0 $1 $2 $3`
+
+- You can get the number of parameters given by some users
+`$#`
+
+- Will return all parameters of the function separated by "", useful if instead writing $1 $2 $3 ... $N, writing $@. ATENTION: "$@" & $@ are different, the difference is when, for example, we write -> touch $@ || touch "$@".
+`$@`
+`"$@"`
+
+- It's the same as $@. HOWEVER, "$*" will separate each parameters with the $IFS value.
+`$*`
+`"$*"`
+
+- Get an input from the user provider
+`read -s hides the input (passwords) | -t N, will return null after N seconds | -p write something here to ask the user`
+
+- Get an input from the user provider, but just a limited amount that you dispose
+`select <variable_name> in <parameter1> <parameter2> <parameterN>;
+do
+    echo "hello"
+done
+`
