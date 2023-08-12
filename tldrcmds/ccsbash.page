@@ -55,6 +55,9 @@
 - OLDPWD
 `Contains the previous folder the currently user was.`
 
+- IFS
+`The shell performs word splittting to break the results of some unquoted expansions into separate word and it uses the IFS variable to do this`
+
 - ================= Command substitution & Arithmetic Expansion ===================
 
 - Command substitution is used to directly reference the result of a command.
