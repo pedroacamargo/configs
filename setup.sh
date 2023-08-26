@@ -97,4 +97,7 @@ echo "Creating the scripts in $scriptsDirectory ..."
 cp -v $cfgscripts_dir/* $scriptsDirectory
 echo "Scripts created successfully!"
 # End
-#
+
+# TODO: Install nvm with curl
+# TODO: Install node with nvm
+# TODO: Setup vim
