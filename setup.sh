@@ -98,6 +98,7 @@ cp -v $cfgscripts_dir/* $scriptsDirectory
 echo "Scripts created successfully!"
 # End
 
+# TODO: Github CLI
 # TODO: Install nvm with curl
 # TODO: Install node with nvm
 # TODO: Setup vim
