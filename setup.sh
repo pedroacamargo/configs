@@ -90,8 +90,6 @@ fi
 echo ""
 # End
 
-
-
 # Create the custom scripts in the directory
 echo "Creating the scripts in $scriptsDirectory ..."
 cp -v $cfgscripts_dir/* $scriptsDirectory
@@ -102,3 +100,5 @@ echo "Scripts created successfully!"
 # TODO: Install nvm with curl
 # TODO: Install node with nvm
 # TODO: Setup vim
+# TODO: Nvim plugins:
+# Adwaita colorscheme
